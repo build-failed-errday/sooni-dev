@@ -15,7 +15,7 @@ export default function Home() {
         </div>
 
 
-      <div className="">I've done ...</div>
+      <div className="">I&apos;ve done ...</div>
       {/* 하스스톤 룰렛통 */}
     </div>
   );
