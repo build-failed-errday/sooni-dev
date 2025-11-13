@@ -8,19 +8,24 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen bg-radial from-gray-700  to-gray-900 justify-start">
-      <div className="w-full bg-transparent-[20%] text-white flex justify-between ">
-        <span className="text-2xl mr-4 py-2 font-bold">sooni.dev</span>
-        <span>status here</span>
+    <div className="flex flex-col w-screen h-screen bg-radial from-neutral-700  to-neutral-800">
+      <div className="fixed-top w-full text-white flex justify-between items-center px-8">
+        <span className="text-2xl mr-4 py-2 font-bold cursor-pointer">
+          sooni.dev
+        </span>
+        <span className="">status here</span>
       </div>
       <div className="flex justify-center">
         <NavigationMenuDemo />
       </div>
       <div className="text-white">currently working on...</div>
-
       <div className="grid w-160 gap-2">
         <Textarea placeholder="What are you doing?" />
-        <Button className='' variant="outline" onClick={() => {}}>
+        <Button
+          className=""
+          variant="outline"
+          onClick={() => {}}
+        >
           Send message
         </Button>
       </div>
