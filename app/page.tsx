@@ -16,11 +16,11 @@ export default function Home() {
       <div className="flex justify-center">
         <NavigationMenuDemo />
       </div>
-      <div className="">currently working on...</div>
+      <div className="text-white">currently working on...</div>
 
       <div className="grid w-160 gap-2">
         <Textarea placeholder="What are you doing?" />
-        <Button variant="outline" onClick={() => {}}>
+        <Button className='' variant="outline" onClick={() => {}}>
           Send message
         </Button>
       </div>
