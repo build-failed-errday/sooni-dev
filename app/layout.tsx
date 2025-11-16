@@ -29,7 +29,7 @@ async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SidebarProvider defaultOpen={true}>{children}</SidebarProvider>
+        <SidebarProvider defaultOpen={false}>{children}</SidebarProvider>
       </body>
     </html>
   );

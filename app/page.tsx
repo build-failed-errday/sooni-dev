@@ -17,7 +17,68 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CardDemo } from "@/components/card-demo";
-import { CarouselDemo } from "@/components/carousel-demo";
+import { SkillsCarousel } from "@/components/skills-carousel";
+import { TSkillItem } from "@/types/TSkillItem";
+
+const tools: TSkillItem[] = [
+  {
+    skillName: "Azure DevOps",
+  },
+  {
+    skillName: "Git",
+  },
+  {
+    skillName: "GitKraken",
+  },
+  {
+    skillName: "Jira",
+  },
+];
+const databases: TSkillItem[] = [
+  {
+    skillName: "PostgreSQL",
+  },
+];
+const languages: TSkillItem[] = [
+  {
+    skillName: "Kotlin",
+  },
+  {
+    skillName: "Flutter",
+  },
+  {
+    skillName: "Typescript",
+  },
+  {
+    skillName: "Javascript",
+  },
+  {
+    skillName: "Java",
+  },
+];
+const frameworks: TSkillItem[] = [
+  {
+    skillName: "Android",
+  },
+  {
+    skillName: "Flutter",
+  },
+  {
+    skillName: "ReactNative",
+  },
+  {
+    skillName: "Next.js",
+  },
+  {
+    skillName: "React.js",
+  },
+  {
+    skillName: "Spring",
+  },
+  {
+    skillName: "Hono",
+  },
+];
 
 export default function Home() {
   return (
@@ -34,7 +95,10 @@ export default function Home() {
         <main>
           <section className=" p-8">
             <div className="flex justify-center">
-              <CarouselDemo />
+              <SkillsCarousel data={frameworks} />
+              <SkillsCarousel data={languages} />
+              <SkillsCarousel data={databases} />
+              <SkillsCarousel data={tools} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <Card className="w-full max-w-sm">
