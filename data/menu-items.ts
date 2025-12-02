@@ -1,10 +1,5 @@
-import { Url } from "url";
-
-type TMenuItems = {
-  menuName: String;
-  href: Url | string;
-};
-export const MenuItems: TMenuItems[] = [
+import { TMenuItem } from "@/types/TMenuItem";
+export const MenuItems: TMenuItem[] = [
   {
     menuName: "Home",
     href: "/",

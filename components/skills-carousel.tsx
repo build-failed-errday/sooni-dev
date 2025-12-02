@@ -26,7 +26,7 @@ export function SkillsCarousel(props: { data: TSkillItem[] }) {
       className="w-full max-w-sm "
       onMouseEnter={() => plugin.current?.stop()}
       onMouseLeave={() => {
-        if (plugin.current) {
+        if (plugin.current && props.data.length > 1) {
           plugin.current.reset();
           plugin.current.play();
         }

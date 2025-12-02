@@ -18,69 +18,13 @@ import {
 } from "@/components/ui/card";
 import { CardDemo } from "@/components/card-demo";
 import { SkillsCarousel } from "@/components/skills-carousel";
-import { TSkillItem } from "@/types/TSkillItem";
-
-const tools: TSkillItem[] = [
-  {
-    skillName: "Azure DevOps",
-  },
-  {
-    skillName: "Git",
-  },
-  {
-    skillName: "GitKraken",
-  },
-  {
-    skillName: "Jira",
-  },
-];
-const databases: TSkillItem[] = [
-  {
-    skillName: "PostgreSQL",
-  },
-];
-const languages: TSkillItem[] = [
-  {
-    skillName: "Kotlin",
-  },
-  {
-    skillName: "Flutter",
-  },
-  {
-    skillName: "Typescript",
-  },
-  {
-    skillName: "Javascript",
-  },
-  {
-    skillName: "Java",
-  },
-];
-const frameworks: TSkillItem[] = [
-  {
-    skillName: "Android",
-  },
-  {
-    skillName: "Flutter",
-  },
-  {
-    skillName: "ReactNative",
-  },
-  {
-    skillName: "Next.js",
-  },
-  {
-    skillName: "React.js",
-  },
-  {
-    skillName: "Spring",
-  },
-  {
-    skillName: "Hono",
-  },
-];
+import { databases, frameworks, languages, tools } from "@/data/skill-items";
+import { useSkill } from "@/stores/useSkill";
 
 export default function Home() {
+  const skill = useSkill((state) => state.skill);
+  const changeSkill = useSkill((state) => state.changeSelected);
+
   return (
     <>
       <AppSidebar />
@@ -94,11 +38,41 @@ export default function Home() {
         </header>
         <main>
           <section className=" p-8">
-            <div className="flex justify-center">
-              <SkillsCarousel data={frameworks} />
-              <SkillsCarousel data={languages} />
-              <SkillsCarousel data={databases} />
-              <SkillsCarousel data={tools} />
+            <div className="flex flex-col justify-center items-center">
+              <div className="flex">
+                <Button
+                  onClick={() => {
+                    changeSkill("frameworks");
+                  }}
+                >
+                  frameworks
+                </Button>
+                <Button
+                  onClick={() => {
+                    changeSkill("languages");
+                  }}
+                >
+                  languages
+                </Button>
+                <Button
+                  onClick={() => {
+                    changeSkill("databases");
+                  }}
+                >
+                  databases
+                </Button>
+                <Button
+                  onClick={() => {
+                    changeSkill("tools");
+                  }}
+                >
+                  tools
+                </Button>
+              </div>
+              {skill === "frameworks" && <SkillsCarousel data={frameworks} />}
+              {skill === "languages" && <SkillsCarousel data={languages} />}
+              {skill === "databases" && <SkillsCarousel data={databases} />}
+              {skill === "tools" && <SkillsCarousel data={tools} />}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <Card className="w-full max-w-sm">
