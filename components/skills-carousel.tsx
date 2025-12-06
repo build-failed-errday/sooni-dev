@@ -32,18 +32,17 @@ export function SkillsCarousel(props: { data: TSkillItem[] }) {
         }
       }}
     >
-      <CarouselContent>
+      <CarouselContent className="">
         {props.data.map((lang, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card className="h-24 p-0 items-center justify-center">
-                <CardContent className="flex p-0 items-center justify-center">
-                  <span className="text-4xl font-semibold">
-                    {lang.skillName}
-                  </span>
-                </CardContent>
-              </Card>
-            </div>
+          <CarouselItem
+            key={index}
+            className="flex justify-center h-12 w-48"
+          >
+            <Card className="h-12 w-48 p-0 items-center justify-center">
+              <CardContent className="flex p-0 items-center justify-center">
+                <span className="text-2xl font-semibold">{lang.skillName}</span>
+              </CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
