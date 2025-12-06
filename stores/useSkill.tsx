@@ -6,6 +6,6 @@ interface SkillState {
 }
 
 export const useSkill = create<SkillState>((set) => ({
-  skill: "",
+  skill: "frameworks",
   changeSelected: (newSkill) => set({ skill: newSkill }),
 }));
